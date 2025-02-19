@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh "rm -rf clinic"
-                sh "git clone https://github.com/Dev86-git/clinic.git"
-                sh "cd clinic"
+               // sh "rm -rf clinic"
+             //   sh "git clone https://github.com/Dev86-git/clinic.git"
+             //   sh "cd clinic"
+                checkoutcode()
             }
         }
         stage('Set up Environment') {
@@ -16,7 +17,8 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh "mvn clean install"
+               // sh "mvn clean install"
+                buildproject()
             }
         }
         stage('Run Application') {
