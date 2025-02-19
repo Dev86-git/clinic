@@ -15,6 +15,18 @@ pipeline {
                 sh 'export MAVEN_HOME=/usr/share/maven'
             }
         }
+                stage('setupjava17') {
+            steps {
+                setupjava('openjdk-17-jdk')
+            }
+        }
+        stage('setupmaven') {
+            steps {
+                //   echo " installing maveen"
+                //sh "sudo apt install -y maven"
+                setupjava('maven')
+            }
+        }
         stage('build') {
             steps {
                // sh "mvn clean install"
