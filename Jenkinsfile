@@ -1,3 +1,4 @@
+@Library('library_dependnacy@main') _
 pipeline {
     agent { label 'slave4' }
     stages {
